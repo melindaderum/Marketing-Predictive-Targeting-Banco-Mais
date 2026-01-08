@@ -1,28 +1,42 @@
 # Banco Mais: Marketing Strategy & Predictive Targeting
 
 ## 1. Background and Overview
-Banco Mais was struggling with a campaign inefficiency problem. They were calling a lot of customers who weren't interested in their term deposits, leading to mixed results. My goal was to look at their data, find which groups were actually saying "yes," and create a plan to get their success rate above the current 40% baseline.
+Banco Mais is currently dealing with a 40% campaign success rate. This means that for every ten calls they make to sell term deposits, six are a waste of time and resources. I looked at 10,000 customer records to find the specific demographic and financial signals that actually predict a subscription. The goal was to find the specific signals that lead to a subscription so the bank can stop calling people who are likely to say no.
 
 ## 2. Data Structure Overview
-I analyzed a dataset of **10,000 customer records** focusing on age, account balances, and existing loan status. I followed the 6-step **Data Analytics Life Cycle**, using Excel to clean the data, run regressions, and validate that the findings were reliable enough to drive business decisions.
+I used Excel to work through the six steps of the Data Analytics Life Cycle. The dataset included 10,000 rows of information on customer age, jobs, bank balances, and existing loans. To get the data ready for a predictive model, I did a few things:
+
+* I built a data dictionary to define every field and its data type.
+
+* I used IFS functions to bin age groups and XLOOKUP to code categories.
+
+* I ran a regression model to test which variables actually predicted a subscription.
 
 ## 3. Executive Summary
-After looking at the data, I found that **Age, Balance, and Loan Status** are the three biggest predictors of whether someone will subscribe. 
-* **Top Performing Segment:** Customers aged **64 and older** convert at **51%** (an 11% lift over the baseline). 
-* **High Risk Segment:** People who already have **personal loans** only convert at **36%**, which falls below the average and signals wasted marketing spend. 
+The data shows the bank is calling the wrong people. While the average success rate is 40%, people 64 and older convert at 51%. But customers who already have a personal loan only convert at 36%. The quickest way to fix this is to prioritize the 55+ demographic and stop calling people who are in debt. It is important to note that my model only explains a tiny part of why people subscribe. Most of the decision-making factors are still unknown, so while these findings help, they aren't the whole story.
 
 ## 4. Insights Deep Dive
-* **The Age Factor:** Success rates go up as customers get older. The 55+ and 64+ groups showed much higher interest in these deposits than younger demographics.
-* **The Impact of Debt:** Having a personal loan is a major deterrent. Calling these customers is largely an unproductive use of resources because they convert 4% lower than the baseline.
-* **Model Reality Check:** While age and debt are strong signals, they don't tell the whole story. This analysis provides an immediate path to improvement, but further behavioral data is needed for a 100% comprehensive strategy.
+**Age as the Primary Driver**
+* Age is the strongest predictor I found. The 64+ age group converts at 51%, which is 11% higher than the bank's average. This suggests that older clients care more about the security of a term deposit. Right now, the bank is losing money by not focusing its efforts on these older segments.
+
+**Existing Debt as a Red Flag**
+* If a customer has a personal loan, the bank should stop calling them. This group converts at only 36%. Since that's lower than the 40% baseline, these calls are actually pulling the average down. People with debt are likely more focused on their liabilities than starting a new deposit.
+
+**Model Limitations and Reality**
+* During the validation phase, I found that while age and debt are statistically significant, they explain less than 1% of the behavior in the data. It was a good lesson in the difference between a signal and a total answer. The findings give the bank a direction for immediate improvement, but most of the factors driving a customer to say yes are still missing from this model.
 
 ## 5. Recommendations
-* **Prioritize High-Conversion Segments:** Shift marketing budget and labor hours toward the **55+ and 64+ age brackets**.
-* **Implement Exclusion Rules:** Immediately stop calling customers with existing personal loans to save on operational costs.
-* **Tailor the Message:** For older segments, marketing creative should focus on **security, fixed rates, and retirement stability** rather than generic offers.
-* **Maintain Ethical Standards:** Future targeting must use anonymous IDs and regular bias audits to ensure data privacy and fairness.
+* Focus marketing hours and budget on the 55+ and 64+ age groups.
+
+* Remove anyone with a personal loan from the outbound call lists.
+
+* Change the marketing message for older clients to focus on security and fixed rates.
+
+* Use anonymous IDs and encrypted data to protect customer privacy.
+
+* Go back to the data source to find the missing factors that my current model couldn't catch.
 
 ---
 ### 📂 Project Files
 * [View Full Analysis Report (PDF)](Assignment%204_%20Validation%20%26%20Communicating%20Results.pdf)
-* [View Data Workbook (Excel)](BankMarketing_F25.xlsb)
+* [View Data Workbook (Excel)](BankMarketing_F25.xlsx)
